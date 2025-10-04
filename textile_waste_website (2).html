@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tekstil Atık Krizi - Sürdürülebilir Geleceğe Doğru</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 255, 102, 0.1);
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #00ff66, #00cc44);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #a0a0a0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #00ff66;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00ff66;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: 
+                linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(15, 35, 15, 0.9) 100%),
+                url('https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?w=1920&q=90') center/cover;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 255, 100, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 200, 80, 0.1) 0%, transparent 50%);
+            animation: pulseGlow 8s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 2rem;
+            max-width: 1200px;
+        }
+
+        .hero-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #00ff66;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #00ff66, #00cc44, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out 0.2s both;
+            line-height: 1.1;
+            text-shadow: 0 0 40px rgba(0, 255, 102, 0.3);
+        }
+
+        .subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.4rem;
+            color: #c0c0c0;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease-out 0.4s both;
+            font-weight: 300;
+            letter-spacing: 1px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            gap: 1rem;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .btn {
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00ff66, #00cc44);
+            color: #000;
+            box-shadow: 0 10px 40px rgba(0, 255, 102, 0.3);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(0, 255, 102, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #00ff66;
+            border: 2px solid #00ff66;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 255, 102, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 4rem;
+        }
+
+        .section {
+            margin-bottom: 8rem;
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1s ease-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #00ff66;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .stats-wrapper {
+            background: linear-gradient(135deg, rgba(0, 50, 20, 0.3), rgba(0, 30, 15, 0.5));
+            border-radius: 30px;
+            padding: 4rem;
+            margin: 4rem 0;
+            border: 1px solid rgba(0, 255, 102, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 255, 102, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-card {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(0, 255, 102, 0.3);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 100, 0.15), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .stat-card:hover::before {
+            left: 100%;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            border-color: rgba(0, 255, 102, 0.6);
+            box-shadow: 0 20px 60px rgba(0, 255, 102, 0.3);
+        }
+
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: #00ff66;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(0, 255, 102, 0.5);
+        }
+
+        .stat-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: #c0c0c0;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .image-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .image-large {
+            grid-row: span 2;
+        }
+
+        .image-card {
+            position: relative;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .image-large {
+            height: 820px;
+        }
+
+        .image-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 70px rgba(0, 255, 102, 0.2);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            filter: brightness(0.8);
+        }
+
+        .image-card:hover img {
+            transform: scale(1.1);
+            filter: brightness(1);
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+            padding: 3rem 2rem 2rem;
+            color: #fff;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .image-card:hover .image-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .image-overlay h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #00ff66;
+        }
+
+        .image-overlay p {
+            font-size: 1rem;
+            color: #c0c0c0;
+            line-height: 1.6;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin: 4rem 0;
+            align-items: center;
+        }
+
+        .content-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+            border-left: 4px solid #00ff66;
+            padding: 3rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+        }
+
+        .content-box:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(0, 255, 102, 0.5);
+            transform: translateX(10px);
+        }
+
+        .content-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #00ff66;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-box p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #c0c0c0;
+            margin-bottom: 1rem;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .problem-card {
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.08), rgba(255, 0, 0, 0.03));
+            border: 1px solid rgba(255, 51, 51, 0.3);
+            border-radius: 15px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: #ff3333;
+            transition: height 0.4s ease;
+        }
+
+        .problem-card:hover::before {
+            height: 100%;
+        }
+
+        .problem-card:hover {
+            background: rgba(255, 0, 0, 0.12);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 51, 51, 0.2);
+        }
+
+        .problem-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #ff6666;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .problem-icon {
+            font-size: 1.8rem;
+        }
+
+        .problem-card p {
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .solution-card {
+            background: linear-gradient(135deg, rgba(0, 255, 100, 0.08), rgba(0, 255, 100, 0.03));
+            border: 1px solid rgba(0, 255, 102, 0.3);
+            border-radius: 15px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 0;
+            background: #00ff66;
+            transition: height 0.4s ease;
+        }
+
+        .solution-card:hover::before {
+            height: 100%;
+        }
+
+        .solution-card:hover {
+            background: rgba(0, 255, 100, 0.12);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 255, 102, 0.2);
+        }
+
+        .solution-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #00ff66;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .solution-icon {
+            font-size: 1.8rem;
+        }
+
+        .solution-card p {
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(0, 255, 100, 0.1), rgba(0, 200, 80, 0.05));
+            border-radius: 30px;
+            padding: 6rem 4rem;
+            text-align: center;
+            margin: 6rem 0;
+            border: 1px solid rgba(0, 255, 102, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 102, 0.1) 0%, transparent 50%);
+            animation: rotate 30s linear infinite;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            color: #c0c0c0;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid rgba(0, 255, 102, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #00ff66, #00cc44);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+        }
+
+        .footer-text {
+            color: #808080;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: #00ff66;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #00cc44;
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 1024px) {
+            .content-grid, .image-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .image-large {
+                height: 400px;
+                grid-row: span 1;
+            }
+
+            .nav {
+                padding: 1rem 2rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                padding: 4rem 2rem;
+            }
+
+            .stats-wrapper {
+                padding: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .problem-grid, .solution-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="logo">TEXTILE</div>
+        <ul class="nav-links">
+            <li><a href="#kriz">Kriz</a></li>
+            <li><a href="#sorunlar">Sorunlar</a></li>
+            <li><a href="#cozumler">Çözümler</a></li>
+            <li><a href="#harekete-gec">Harekete Geç</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-subtitle">Moda Endüstrisinin Karanlık Gerçeği</div>
+            <h1>Tekstil Atık Krizi</h1>
+            <p class="subtitle">Her yıl 92 milyon ton tekstil atığı üretiliyor ve gezegenimiz bu yükün altında eziliyor</p>
+            <div class="hero-cta">
+                <a href="#kriz" class="btn btn-primary">Krizi Keşfet</a>
+                <a href="#cozumler" class="btn btn-secondary">Çözümleri Gör</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#00ff66" stroke-width="2">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section" id="kriz">
+            <div class="section-header">
+                <div class="section-label">Küresel Tehdit</div>
+                <h2 class="section-title">Kriz Boyutunda Bir Sorun</h2>
+                <p class="section-description">Tekstil endüstrisi, petrol endüstrisinden sonra dünyanın en büyük ikinci kirleticisi konumunda. Fast fashion kültürü, bu krizi her geçen gün derinleştiriyor.</p>
+            </div>
+
+            <div class="image-showcase">
+                <div class="image-card image-large">
+                    <img src="https://images.unsplash.com/photo-1604549944235-3e5579b15cc2?w=800&q=80" alt="Tekstil Atıkları">
+                    <div class="image-overlay">
+                        <h3>Çöplük Dağları</h3>
+                        <p>Her saniye bir kamyon dolusu tekstil atığı çöplüklere dökülüyor</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=800&q=80" alt="Fast Fashion">
+                    <div class="image-overlay">
+                        <h3>Fast Fashion</h3>
+                        <p>Hızlı moda akımının sürdürülemez tüketim döngüsü</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1610652492500-768a4f36f60e?w=800&q=80" alt="Tekstil Üretimi">
+                    <div class="image-overlay">
+                        <h3>Aşırı Üretim</h3>
+                        <p>Son 15 yılda giysi üretimi %100 arttı, kullanım süresi %40 azaldı</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-wrapper">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">🌍</div>
+                        <div class="stat-number">92M</div>
+                        <div class="stat-label">Ton Tekstil Atığı Üretiliyor Her Yıl</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">♻️</div>
+                        <div class="stat-number">%85</div>
+                        <div class="stat-label">Tekstil Ürünleri Çöpe Gidiyor</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⏳</div>
+                        <div class="stat-number">200</div>
+                        <div class="stat-label">Yıl Doğada Ayrışma Süresi</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💧</div>
+                        <div class="stat-number">2700L</div>
+                        <div class="stat-label">Su Gerekiyor Bir Tişört İçin</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-box">
+                    <h3>Çevresel Tahribat</h3>
+                    <p>Tekstil endüstrisi, küresel karbon emisyonlarının %10'undan sorumlu. Bu oran, tüm uluslararası uçuşlar ve deniz taşımacılığının toplamından daha fazla.</p>
+                    <p>Pamuk tarımı, dünyadaki pestisit kullanımının %24'ünü tüketiyor ve bu kimyasallar su kaynaklarını ciddi şekilde kirletiyor.</p>
+                </div>
+                <div class="content-box">
+                    <h3>Ekonomik Kayıp</h3>
+                    <p>Her yıl 500 milyar dolarlık değer, kullanılmayan veya geri dönüştürülmeyen kıyafetler nedeniyle kaybediliyor.</p>
+                    <p>Avrupa'da ortalama bir kişi yılda 11 kg tekstil atığı üretiyor ve bunun sadece %1'i yeni ürünlere dönüştürülüyor.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="sorunlar">
+            <div class="section-header">
+                <div class="section-label">Temel Problemler</div>
+                <h2 class="section-title">Krizin Anatomisi</h2>
+                <p class="section-description">Tekstil atık krizini derinleştiren çok katmanlı sorunlar ve bunların çevresel, ekonomik ve sosyal etkileri</p>
+            </div>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h4><span class="problem-icon">⚡</span> Aşırı Üretim ve Tüketim</h4>
+                    <p>Fast fashion markaları her hafta yeni koleksiyonlar çıkararak sürekli tüketimi körüklüyor. Dünya çapında yılda 100 milyar giysiden fazla üretiliyor ve bunun büyük kısmı birkaç kez giyilip atılıyor. Ortalama bir giysi 7-10 kez giyilirken, bu sayı 20 yıl önce 50'nin üzerindeydi.</p>
+                </div>
+
+                <div class="problem-card">
+                    <h4><span class="problem-icon">⚗️</span> Kimyasal Kirlilik</h4>
+                    <p>Tekstil boyama ve işleme süreçlerinde 8000'den fazla sentetik kimyasal kullanılıyor. Bu kimyasalların çoğu arıtılmadan su kaynaklarına karışıyor. Tekstil endüstrisi, dünya çapında endüstriyel su kirliliğinin %20'sinden sorumlu ve bu durum milyonlarca insanın temiz suya erişimini engelliyor.</p>
+                </div>
+
+                <div class="problem-card">
+                    <h4><span class="problem-icon">🔄</span> Geri Dönüşüm Altyapı Eksikliği</h4>
+                    <p>Tekstil atıklarının sadece %1'i yeni kıyafetlere dönüştürülüyor. Karışık liflerin ayrıştırılması teknolojik olarak zor ve maliyetli. Mevcut geri dönüşüm tesisleri yetersiz ve çoğu ülkede tekstil geri dönüşümü için yasal zorunluluk bulunmuyor. Sonuç olarak tonlarca değerli malzeme çöplüklerde çürüyor.</p>
+                </div>
+
+                <div class="problem-card">
+                    <h4><span class="problem-icon">🌡️</span> Karbon Ayak İzi</h4>
+                    <p>Tekstil sektörü yılda 1.2 milyar ton CO2 salınımından sorumlu - bu, tüm uluslararası havacılık ve deniz taşımacılığının toplamından fazla. Sentetik kumaşların üretimi özellikle enerji yoğun ve fosil yakıt bazlı. Bir kot pantolon üretimi 33.4 kg CO2 emisyonuna neden oluyor.</p>
+                </div>
+
+                <div class="problem-card">
+                    <h4><span class="problem-icon">💧</span> Su İsrafı ve Kirliliği</h4>
+                    <p>Tekstil endüstrisi yılda 93 milyar metreküp su tüketiyor - 37 milyon olimpik yüzme havuzunu dolduracak kadar. Bir kot pantolon üretmek için 7500 litre su gerekiyor, bu bir kişinin 7 yıl boyunca içebileceği su miktarı. Aynı zamanda kullanılan suyun %20'si arıtılmadan doğaya bırakılıyor.</p>
+                </div>
+
+                <div class="problem-card">
+                    <h4><span class="problem-icon">🧵</span> Mikroplastik Kirliliği</h4>
+                    <p>Her yıkamada sentetik giysiler 700.000 mikroplastik lif bırakıyor. Bu lifler arıtma tesislerinden geçse bile okyanusa karışıyor ve deniz yaşamına zarar veriyor. Araştırmalar, deniz suyunda ve hatta insan kanında mikroplastiklerin bulunduğunu gösteriyor. Tekstil kaynaklı mikroplastikler, okyanuslardaki plastik kirliliğinin %35'ini oluşturuyor.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="cozumler">
+            <div class="section-header">
+                <div class="section-label">Sürdürülebilir Gelecek</div>
+                <h2 class="section-title">Çözüm Yolları</h2>
+                <p class="section-description">Tekstil atık krizini çözmek için bireysel, kurumsal ve sistemik düzeyde uygulanabilir çözümler</p>
+            </div>
+
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <h4><span class="solution-icon">🔄</span> Döngüsel Ekonomi Modeli</h4>
+                    <p>Doğrusal "al-kullan-at" modelinden döngüsel ekonomiye geçiş şart. Ürünlerin tasarım aşamasından itibaren geri dönüşüm göz önünde bulundurulmalı. "Beşikten beşiğe" tasarım prensibi ile tüm materyaller sürekli döngüde tutulmalı. Kiralama, tamir ve yeniden satış modelleri teşvik edilmeli.</p>
+                </div>
+
+                <div class="solution-card">
+                    <h4><span class="solution-icon">🌱</span> Sürdürülebilir Materyal Kullanımı</h4>
+                    <p>Organik pamuk, keten, kenevir gibi doğal ve yenilenebilir kaynaklar tercih edilmeli. Geri dönüştürülmüş poliester ve naylon kullanımı artırılmalı. Biyobozunur alternatifler (mantar deri, ananas lifi, deniz yosunu bazlı kumaşlar) geliştirilmeli. Tencel, Modal gibi sürdürülebilir selüloz bazlı kumaşlar yaygınlaştırılmalı.</p>
+                </div>
+
+                <div class="solution-card">
+                    <h4><span class="solution-icon">💡</span> Teknolojik İnovasyon</h4>
+                    <p>Yapay zeka ile talep tahmini yapılarak aşırı üretim engellenebilir. Fiber-to-fiber geri dönüşüm teknolojileri geliştirilmeli. Su ve enerji tasarrufu sağlayan üretim yöntemleri (lazer yıkama, dijital baskı, su bazlı boyama) benimsenmeli. Blockchain ile tedarik zinciri şeffaflığı sağlanmalı.</p>
+                </div>
+
+                <div class="solution-card">
+                    <h4><span class="solution-icon">⚖️</span> Yasal Düzenlemeler</h4>
+                    <p>Genişletilmiş Üretici Sorumluluğu (EPR) yasaları çıkarılmalı - üreticiler ürünlerinin yaşam döngüsü sonunda geri dönüşümünden sorumlu tutulmalı. Tekstil atıklarının düzenli depolama alanlarına gitmesi yasaklanmalı. Sürdürülebilir üretim yapan firmalar vergi teşvikleriyle desteklenmeli. Greenwashing'e karşı sıkı denetimler uygulanmalı.</p>
+                </div>
+
+                <div class="solution-card">
+                    <h4><span class="solution-icon">🛍️</span> Bilinçli Tüketim Kültürü</h4>
+                    <p>Kalite odaklı alışveriş teşvik edilmeli - daha az ama daha iyi. "Her mevsim 30 parça" gibi kapsül gardırop konseptleri yaygınlaştırılmalı. İkinci el alışveriş normalleştirilmeli ve stigması kırılmalı. Kıyafet kiralama, takas ve paylaşım platformları desteklenmeli. Tüketiciler satın alma öncesi "gerçekten ihtiyacım var mı?" sorusunu sorgulamalı.</p>
+                </div>
+
+                <div class="solution-card">
+                    <h4><span class="solution-icon">📚</span> Eğitim ve Farkındalık</h4>
+                    <p>Okullarda tekstil etiği ve sürdürülebilirlik eğitimi verilmeli. Markalar ürünlerinin çevresel ayak izini şeffaf bir şekilde paylaşmalı. Medya kampanyalarıyla fast fashion'ın gerçek maliyeti gösterilmeli. Influencer'lar ve ünlüler sürdürülebilir moda elçiliği yapmalı. Tüketiciler etiket okuma ve sürdürülebilir marka seçimi konusunda bilinçlendirilmeli.</p>
+                </div>
+
+                <div class="solution-card">
+                    <h4><span class="solution-icon">🔧</span> Tamir ve Bakım Kültürü</h4>
+                    <p>Tamir atölyeleri ve hizmetleri teşvik edilmeli. "Tamir hakkı" yasaları ile markaların ürünlerini tamir edilebilir tasarlamaları zorunlu kılınmalı. DIY tamir kılavuzları ve video içerikler yaygınlaştırılmalı. Doğru yıkama ve bakım ile kıyafetlerin ömrü 9 ay uzatılabilir - bu %20-30 daha az atık demek.</p>
+                </div>
+
+                <div class="solution-card">
+                    <h4><span class="solution-icon">🤝</span> İşbirlikleri ve Ortaklıklar</h4>
+                    <p>Markalar, NGO'lar, akademi ve hükümetler birlikte çalışmalı. Fashion Pact, Ellen MacArthur Foundation gibi küresel girişimler desteklenmeli. Endüstri genelinde standartlar ve sertifikasyonlar (GOTS, Oeko-Tex, Fair Trade) yaygınlaştırılmalı. Toplama ve geri dönüşüm altyapısı için kamu-özel sektör ortaklıkları kurulmalı.</p>
+                </div>
+
+                <div class="solution-card">
+                    <h4><span class="solution-icon">🌍</span> Yerel Üretim Teşviki</h4>
+                    <p>Yerel üretim karbon ayak izini %30-50 azaltabilir. Kısa tedarik zincirleri şeffaflık ve denetim sağlar. Yerel zanaatkarlar ve geleneksel teknikler korunmalı. "Yavaş moda" hareketinin bir parçası olarak küçük ölçekli, kaliteli üretim desteklenmeli. Lokal markalar teşvik edilmeli.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="harekete-gec">
+            <div class="cta-section">
+                <div class="cta-content">
+                    <h2>Değişim Bugün Başlıyor</h2>
+                    <p>Tekstil atık krizi devasa bir sorun ama çözümü imkansız değil. Her satın alma kararı, her geri dönüşüm girişimi ve her farkındalık kampanyası fark yaratır. Bireysel eylemlerimiz kolektif bir güce dönüşebilir.</p>
+                    <p style="margin-top: 1.5rem; margin-bottom: 2.5rem;">2030 yılına kadar tekstil atıklarını %50 azaltma hedefimize ulaşmak için hepimizin katkısına ihtiyaç var. Sürdürülebilir bir gelecek için bugün harekete geçelim.</p>
+                    <div class="hero-cta">
+                        <a href="#" class="btn btn-primary">Harekete Geç</a>
+                        <a href="#" class="btn btn-secondary">Daha Fazla Öğren</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">TEXTILE CRISIS</div>
+            <p class="footer-text">Sürdürülebilir moda için farkındalık yaratıyoruz. Her gün yeni bir fırsat, her seçim yeni bir başlangıç.<br>Birlikte daha yeşil bir gelecek inşa edebiliriz.</p>
+            <div class="social-links">
+                <a href="#">📱</a>
+                <a href="#">🐦</a>
+                <a href="#">📷</a>
+                <a href="#">💼</a>
+            </div>
+            <p class="footer-text" style="margin-top: 2rem; font-size: 0.85rem; color: #606060;">
+                &copy; 2025 Tekstil Atık Farkındalığı | Sürdürülebilir Gelecek İçin Birlikte
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            if (scrollIndicator) {
+                scrollIndicator.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: window.innerHeight,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            const nav = document.querySelector('.nav');
+            let lastScroll = 0;
+
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                
+                if (currentScroll > 100) {
+                    nav.style.background = 'rgba(10, 10, 10, 0.98)';
+                    nav.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.5)';
+                } else {
+                    nav.style.background = 'rgba(10, 10, 10, 0.95)';
+                    nav.style.boxShadow = 'none';
+                }
+                
+                lastScroll = currentScroll;
+            });
+        });
+    </script>
+</body>
+</html>
